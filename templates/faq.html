@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAQ{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/faq.css' %}">
+<div class="qa-container">
+    <!-- Question Input Section -->
+    <div class="input-section">
+        <h1>Ask your question</h1>
+        <form method="post" action="{% url 'faq' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="submit-btn" type="submit">Submit Question</button>
+        </form>
+    </div>
+
+    <hr />
+
+    <!-- Questions Container -->
+    <div class="questions-container">
+        <h2>Questions:</h2>
+        <ul>
+            {% for faq in faqs %}
+            <li class="question">
+                <strong class="question-text">{{ faq.question }}</strong> by {{ faq.user.username }}
+
+                <!-- Reply Form -->
+                <form method="post" action="{% url 'faq_reply' faq.id %}">
+                    {% csrf_token %}
+                    <textarea name="reply" rows="3" placeholder="Write a reply..."></textarea>
+                    <button type="submit">Reply</button>
+                </form>
+
+                <!-- Replies Container -->
+                <ul class="replies">
+                    {% for reply in replies %}
+                    {% if reply.question.id == faq.id %}
+                    <li class="reply">
+                        <strong>{{ reply.user.username }}:</strong> {{ reply.reply }}
+                    </li>
+                    {% endif %}
+                    {% empty %}
+                    <li>No replies yet.</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}

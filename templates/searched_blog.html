@@ -1,0 +1,44 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ object.title }}</title> <!-- This will show the blog title -->
+</head>
+<body>
+
+    <h1>{{ object.title }}</h1>  <!-- Blog title -->
+    <p>{{ object.content }}</p>  <!-- Blog content or body -->
+
+    <!-- You can display other fields like this -->
+    <p>Published on: {{ object.published_date }}</p>
+    <p>Author: {{ object.author }}</p>
+
+    <!-- Add any other necessary HTML structure -->
+
+</body>
+</html> {% endcomment %}
+<!-- blog_search.html -->
+
+<h2>Search Blogs</h2>
+
+<form method="get" action="{% url 'search' %}">
+    <input type="text" name="query" placeholder="Search by title" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if blogs %}
+    <h3>Search Results:</h3>
+    <ul>
+        {% for blog in blogs %}
+            <li>
+                <h4>{{ blog.title }}</h4>
+                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" style="width: 100px;">
+                <p>{{ blog.content|truncatewords:20 }}</p>
+                <a href="{% url 'read_blog' blog.pk %}">Read more</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found.</p>
+{% endif %}

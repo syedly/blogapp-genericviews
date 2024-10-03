@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispered Stories</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <!-- Transparent Navbar -->
+    <div class="navbar">
+        <div>
+            <h3 style="color: f39c12s;">Whispered Stories</h3> <!-- Make the logo text white to be visible -->
+        </div>
+        <div>
+            <a href="">About Us</a>
+            <a href="">Contact Us</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Signup</a>
+        </div>
+    </div>
+
+    <!-- Content with static and rotating text -->
+    <div class="content">
+        <div>
+            <h1 style="color:f39c12s;" class="static-text">Have</h1>
+        </div>
+        <div>
+            <p class="rotating-text" id="rotatingText"></p>
+        </div>
+    </div>
+
+    <script src="{% static 'javascript/index.js' %}"></script>
+</body>
+</html>

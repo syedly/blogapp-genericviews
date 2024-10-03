@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="parent-div">
+        <div class="signin-container">
+            <div>
+                <h1 class="thin-text">Have a story to tell?</h1>
+                <h3 class="thin-text">Share your thoughts and let your voice be heard. <br> Start writing today!</h3>
+            </div>
+            <div>
+                <h2 class="thin-text">Signup</h2>
+            </div>
+            <div>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="input-container">
+                        <p>Username</p>
+                        {{form.username}}
+                    </div>
+                    <div class="input-container">
+                        <p>Email</p>
+                        {{form.email}}
+                    </div>
+                    <div class="input-container">
+                        <p>First Name</p>
+                        {{form.first_name}}
+                    </div>
+                    <div class="input-container">
+                        <p>Last Name</p>
+                        {{form.last_name}}
+                    </div>
+                    <div class="input-container">
+                        <p>Password</p>
+                        {{form.password1}}
+                    </div>
+                    <div class="input-container">
+                        <p>Reenter Password</p>
+                        {{form.password2}}
+                    </div>
+                    <br>
+                    <a href="{% url 'login' %}" class="signup-link">Already have an account? Signin</a>
+                    <br>
+                    <div>
+                        <button class="btn-signin" type="submit">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/a.png' %}" alt="Image description">
+        </div>
+    </div>
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.username }}
+        {{ form.email }}
+        {{ form.password1 }}
+        {{ form.password2 }}
+        {{ form.first_name }}
+        {{ form.last_name }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html> {% endcomment %}

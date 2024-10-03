@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #000; /* Black background */
+  padding: 20px;
+  color: white;
+}
+
+.parent-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left side: Blog form */
+.form-container {
+  flex: 1 1 45%;
+  background-color: #222; /* Darker black for contrast */
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #f04e23; /* Red text */
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+  padding: 0;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #f04e23; /* Red button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: #d43c19;
+}
+
+/* Right side: Blogs list */
+.blogs-container {
+  flex: 1 1 45%;
+  background-color: #111; /* Black */
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blogs-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #f04e23; /* Red */
+  text-transform: uppercase;
+}
+
+.blog-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Dark background for each blog item */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.blog-item:hover {
+  background-color: #222;
+}
+
+.blog-item span {
+  font-size: 1.1rem;
+}
+
+.delete-btn {
+  background-color: #d9534f; /* Red */
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .parent-div {
+      flex-direction: column;
+      gap: 40px;
+  }
+
+  .form-container,
+  .blogs-container {
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-container h1,
+  .blogs-container h1 {
+      font-size: 1.4rem;
+  }
+
+  .submit-btn {
+      font-size: 1rem;
+  }
+
+  .blog-item span,
+  .delete-btn {
+      font-size: 0.9rem;
+  }
+}

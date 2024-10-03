@@ -1,0 +1,130 @@
+body {
+    background-image: url('../images/a.png'); /* Replace with the path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh; /* Ensure the background covers the full viewport */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transparent navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background */
+    position: absolute; /* Make it overlay on top of the background */
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Make sure the navbar stays on top */
+}
+
+/* Navbar links styling */
+.navbar a {
+    color: red; /* Red text for navbar links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Optional: Add hover effect for navbar links */
+.navbar a:hover {
+    color: #f39c12; /* Orange for hover effect */
+}
+
+/* Centered content styling */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red; /* Red text for main content */
+}
+
+.static-text {
+    font-size: 64px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+    color: red; /* Red static text */
+}
+
+/* Typing effect for rotating text */
+.rotating-text {
+    font-size: 36px;
+    color: red; /* Red rotating text */
+    font-weight: bold;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid red; /* Red cursor effect */
+    width: 0; /* Start with no width */
+    visibility: hidden; /* Initially hidden */
+    animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    0% {
+        width: 0;
+        visibility: visible;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+    
+    .static-text {
+        font-size: 48px;
+    }
+
+    .rotating-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 14px;
+    }
+    
+    .static-text {
+        font-size: 36px;
+    }
+
+    .rotating-text {
+        font-size: 18px;
+    }
+}

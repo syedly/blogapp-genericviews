@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+}
+
+.qa-container {
+    width: 60%;
+    margin: 50px auto;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+#question-input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#submit-btn {
+    width: 100%;
+    background-color: red; /* Red button */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #b30000; /* Darker red on hover */
+}
+
+.questions-container {
+    margin-top: 20px;
+}
+
+.question {
+    background-color: #222; /* Gray background for question */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 5px solid red; /* Red border for questions */
+    color: red; /* Red text for questions */
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: red; /* Red text for question title */
+}
+
+.replies {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.reply {
+    background-color: #222; /* Gray background for reply */
+    padding: 10px;
+    border-left: 3px solid red; /* Red border for replies */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: red; /* Red text for replies */
+}
+
+.reply-text {
+    margin: 0;
+    font-size: 16px;
+    color: red; /* Red text for reply content */
+}
+
+@media (max-width: 768px) {
+    .qa-container {
+        width: 90%;
+    }
+}

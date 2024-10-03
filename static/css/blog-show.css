@@ -1,0 +1,105 @@
+.blog-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative; /* Position for navigation buttons */
+}
+
+.blog-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    overflow: hidden; /* Hide scrollbar */
+    width: 100%; /* Full width container */
+    scroll-behavior: smooth;
+}
+
+.blog-post {
+    background-color: #222; /* Set card background color to dark gray */
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    min-height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: red; /* Set text color to red */
+}
+
+.blog-post img {
+    width: 100%;
+    height: 70%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.read-button {
+    background-color: red; /* Button background color red */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.read-button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.read-button:hover {
+    background-color: #b30000; /* Darker red on hover */
+}
+
+/* Buttons for blog navigation with symbols inside */
+.nav-button {
+    background-color: red; /* Button color red */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 24px; /* Increase font size for symbol visibility */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-button {
+    left: 10px;
+}
+
+.right-button {
+    right: 10px;
+}
+
+.nav-button::before {
+    content: ''; /* To hold symbols (add these via JavaScript or an icon library) */
+}
+
+.nav-button:hover {
+    background-color: #b30000; /* Darker red on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-post {
+        width: 250px;
+        min-height: 450px;
+    }
+}
